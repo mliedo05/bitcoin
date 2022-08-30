@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-  get 'bitcoins/create'
-  get 'bitcoins/index'
-  get 'bitcoins/destroy'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :cryptos, only: %i[create index destroy]
+  
+  root "cryptos#index"
 end
