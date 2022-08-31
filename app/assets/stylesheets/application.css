@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+ 
  #selectme {
     width:300px;
     background-color:#EEEEEE;
@@ -24,6 +25,18 @@
     float:left;
 }
 
+#dropdown {
+    border:1px solid #A9A9A9;
+    margin: 1px;
+  }
+
+#pagy {
+   display: inline;
+  }
+#information {
+    border:1px solid #A9A9A9;
+    margin-left: 15px;
+}
 ul#options {
     width:300px;
     float:left;
@@ -79,3 +92,12 @@ ul#options li:hover {
     border-width: 5px !important;
     margin-top: -8px;
 }
+summary::marker {
+    content: '\f0ab' ' ';
+    /* Required for FA icons */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 700;
+  }
+  details[open] summary::marker {
+    content: '\f0aa' ' ';
+  }  
