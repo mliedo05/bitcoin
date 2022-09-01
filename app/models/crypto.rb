@@ -10,4 +10,5 @@ class Crypto < ApplicationRecord
         
         self.bits = self.data.bytesize
     end
+    
 end

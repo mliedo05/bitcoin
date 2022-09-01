@@ -16,7 +16,7 @@ class CryptosController < ApplicationController
                partial: 'cryptos/crypto',
                locals: {crypto: @crypto}
             ),
-            turbo_stream.update('notice', "Hash #{@crypto.data} created")
+            turbo_stream.update('notice', "Block #{@crypto.data} Created")
           ]
         end
       else
@@ -39,7 +39,7 @@ class CryptosController < ApplicationController
           turbo_stream.remove(
             @crypto
           ),
-          turbo_stream.update('notice', "Hash #{@crypto.data} deleted")
+          turbo_stream.update('notice', "Hash #{@crypto.data} Deleted")
         ]
       end
     end
