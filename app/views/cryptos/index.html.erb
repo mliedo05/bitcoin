@@ -1,19 +1,30 @@
-<h2>Hashes</h2>
+<div id="cubo">
+  <div  class="cube">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <h2>Hashes</h2>
+  <p id="notice">
+    <%= notice %>
+  </p>
 
-<p id="notice">
-  <%= notice %>
-</p>
+  <%= render "form" %>
 
-<%= render "form" %>
-
-  <div class="row callout small">
-    <div class="columns">
-      <div id="crypto">
-          <%= render "list" %>
+    <div class="row callout small">
+      <div class="columns">
+        <div id="crypto">
+            <%= render "list" %>
+        </div>
       </div>
     </div>
-  </div>
 
-  
+  <div id="pagy">
   <%== pagy_nav (@pagy) %>
+  </div>
+</div>
+
   

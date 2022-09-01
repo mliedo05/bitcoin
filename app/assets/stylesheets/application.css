@@ -98,7 +98,69 @@ summary::marker {
     /* Required for FA icons */
     font-family: 'Font Awesome 5 Free';
     font-weight: 700;
+    background-color: #333333;
   }
   details[open] summary::marker {
     content: '\f0aa' ' ';
+    background-color: #333333;
   }  
+
+  .cube {
+    --size: 120px;
+    transform-style: preserve-3d;
+    
+    transform: rotateX(.5turn);
+    display: inline-block;
+    width: var(--size);
+    height: var(--size);
+    animation: 6s rotate linear infinite;
+  }
+  
+  @keyframes rotate{
+    from{
+      transform: rotateZ(-1turn) rotateX(-1turn) rotateY(-1turn);
+    }
+  }
+  
+  .cube > div {
+    --tz: calc(var(--size) / 2);
+    --rx: 0deg;
+    --ry: 0deg;
+    --color: transparent;
+    
+    background: var(--color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    border: 5px solid white;
+    transform: translateZ(var(--tz)) rotateX(var(--rx)) rotateY(var(--ry));
+    backface-visibility: none;
+    opacity: 1;
+      
+  }
+  .cube > div:nth-child(1) {
+    transform: translate3d(0px, 0px, 0px) rotateX(0deg);
+  }
+  .cube > div:nth-child(2) {
+       transform: translate3d(0px, -100px, 100px) rotateX(90deg);
+  }
+  .cube > div:nth-child(3) {
+    --tz: var(--size);
+  }
+  .cube > div:nth-child(4) {
+    transform: translate3d(0px, 100px, 100px) rotateX(90deg);
+  }
+  .cube > div:nth-child(5) {
+    transform: translate3d(100px, 0px, 100px) rotateY(90deg);
+  }
+  
+  .cube > div:nth-child(6) {
+    transform: translate3d(-100px, 0px, 100px) rotateY(90deg);
+  }  
+#cubo {
+    color: #fff;
+    background-color: #333333;
+}
