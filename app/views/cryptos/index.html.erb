@@ -1,28 +1,19 @@
-<h1>Bitcoins#index</h1>
+<h2>Hashes</h2>
+
+<p id="notice">
+  <%= notice %>
+</p>
 
 <%= render "form" %>
 
-<h2>Tables</h2>
-
-<div class="row">
-  <div class="columns">
-    <ul class="vertical menu" data-accordion-menu style="max-width: 250px">
-      <% @cryptos.each do |crypto| %>
-        <li>
-          <a href="#"><span><%= crypto.data %></span><i class="fa-solid fa-up-down fa-2x"></i></a>
-          <span></span>
-          <ul class="menu vertical nested">
-            <li>
-              <p><%= crypto.prev_block %></p>
-              <p><%= crypto.block_index %></p>
-              <p><%= crypto.time %></p>
-              <p><%= crypto.bits %></p>
-              <%= link_to crypto_path(crypto.id), data: { "turbo-method": :delete } do %><i class="fas fa-trash-alt fa-2x"></i>
-                <% end %>
-            </li>
-          </ul>
-        </li>
-      <% end %>
-    </ul>
+  <div class="row callout small">
+    <div class="columns">
+      <div id="crypto">
+          <%= render "list" %>
+      </div>
+    </div>
   </div>
-</div>
+
+  
+  <%== pagy_nav (@pagy) %>
+  

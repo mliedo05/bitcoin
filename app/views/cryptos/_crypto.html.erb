@@ -1,0 +1,17 @@
+<div id="<%= dom_id crypto%>">
+    <details>
+        <summary id="dropdown">
+        <span><%= crypto.data %></span><%= button_to  crypto_path(crypto.id), form:{ data: { turbo_confirm: "Are you sure you want to delete this hash?"} },method: :delete do %><i class="fas fa-trash-alt "></i>
+            <% end %>
+        </summary>
+        <div id="information">
+            <p>Prev_block: <%= crypto.prev_block %></p>
+            <p>Block_index: <%= crypto.block_index %></p>
+            <p>Time: <%= crypto.time %></p>
+            <p>Bits: <%= crypto.bits %></p>
+        <div>
+    </details>
+</div>
+
+
+
