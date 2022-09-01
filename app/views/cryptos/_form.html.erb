@@ -1,6 +1,6 @@
-  <%= form_for @crypto, url: cryptos_path, method: :post do |form| %>
-    <%= form.text_field :data %>
-    <div class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-      <%= form.submit "ADD" %>
-    </div>
-  <% end %>
+<%= form_for @crypto, url: cryptos_path, method: :post do |form| %>
+  <%= form.text_field :data, required: true, pattern: "[a-zA-Z0-9]+" %>
+  <div class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+    <%= form.submit "ADD" %>
+  </div>
+<% end %>

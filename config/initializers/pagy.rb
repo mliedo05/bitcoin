@@ -14,7 +14,7 @@
 # Instance variables
 # See https://ddnexus.github.io/pagy/api/pagy#instance-variables
 # Pagy::DEFAULT[:page]   = 1                                  # default
-Pagy::DEFAULT[:items]  = 5                                 # default
+Pagy::DEFAULT[:items]  = 5                                # default
 # Pagy::DEFAULT[:outset] = 0                                  # default
 
 
@@ -27,7 +27,7 @@ Pagy::DEFAULT[:items]  = 5                                 # default
 # Pagy::DEFAULT[:fragment]   = '#fragment'                     # example
 # Pagy::DEFAULT[:link_extra] = 'data-remote="true"'            # example
 # Pagy::DEFAULT[:i18n_key]   = 'pagy.item_name'                # default
-# Pagy::DEFAULT[:cycle]      = true                            # example
+ Pagy::DEFAULT[:cycle]      = true                            # example
 
 
 # Extras

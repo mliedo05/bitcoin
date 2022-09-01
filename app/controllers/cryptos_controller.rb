@@ -5,24 +5,24 @@ class CryptosController < ApplicationController
   def create
     @crypto = Crypto.new(crypto_params)
     @crypto.fill_attrs
-     respond_to do |format|
-        # debugger
-       if @crypto.save
-        #  format.html { redirect_to root_path, notice: "greimer vino successfully created." }
-        #  format.json { render :index, status: :created, location: @crypto }
+    respond_to do |format|
+      if @crypto.save
+        @crypto.block_index = @crypto.id
+        @crypto.save
         format.turbo_stream do
           render turbo_stream: [
             turbo_stream.prepend(
               'crypto', 
                partial: 'cryptos/crypto',
                locals: {crypto: @crypto}
-            )
+            ),
+            turbo_stream.update('notice', "Hash #{@crypto.data} created")
           ]
         end
-       else
-         format.html { render :index, status: :unprocessable_entity }
-       end
-     end
+      else
+        format.html { render :index, status: :unprocessable_entity }
+      end
+    end
   end
 
 
@@ -38,7 +38,8 @@ class CryptosController < ApplicationController
         render turbo_stream: [
           turbo_stream.remove(
             @crypto
-          )
+          ),
+          turbo_stream.update('notice', "Hash #{@crypto.data} deleted")
         ]
       end
     end

@@ -1,13 +1,19 @@
 <h2>Hashes</h2>
+
+<p id="notice">
+  <%= notice %>
+</p>
+
 <%= render "form" %>
 
   <div class="row callout small">
     <div class="columns">
       <div id="crypto">
-          <%= render "list" %>  
+          <%= render "list" %>
       </div>
     </div>
   </div>
-  <div id="pagy">
-    <%= raw pagy_nav (@pagy) %>
-  </div>
+
+  
+  <%== pagy_nav (@pagy) %>
+  
